@@ -2,70 +2,43 @@
 <html>
   <head>
     <title>Blog TD01</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="theme.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   </head>
-  <body>
-    <!-- Title -->
-    <h1 id=title-blog>Web Technologies Blog</h1>
 
-    <div class="content">
-      <!-- First category -->
-      <div class="category card shadow p-3 mb-5 bg-white rounded">
-        <h2 class="category-title">HTML</h2>
-        <!-- First post -->
-        <div class="post well">
-          <h3 class="post-title">What is HTML<h3>
-          <p class="post-paragraph d-none d-sm-block">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </p>
-          <p class="post-author-date d-none d-sm-block">Written by Manon P., <span class="post-date">09/14/2018</span></p>
-        </div>
-        <!-- Second post -->
-        <div class="post well">
-          <h3 class="post-title">Markups<h3>
-          <p class="post-paragraph d-none d-sm-block">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </p>
-          <p class="post-author-date d-none d-sm-block">Written by Manon P., <span class="post-date">09/14/2018</span></p>
-        </div>
-        <!-- Third post -->
-        <div class="post well">
-          <h3 class="post-title">Flex<h3>
-          <p class="post-paragraph d-none d-sm-block">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </p>
-          <p class="post-author-date d-none d-sm-block">Written by Manon P., <span class="post-date">09/14/2018</span></p>
+  <body class="mybody">
+    <div class="container-fluid">
+      <div class="row header no-gutters">
+        <p id="title-blog" class="col-md-5">Web Techno Blog</p>
+        <div class="col-md-7">
+          <div class="row justify-content-end no-gutters" style="display: flex; align-items: center;">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a class="menu-button btn btn-primary" href="index.html">Main</a>
+              <a class="menu-button btn btn-primary" href="category1.html">HTML</a>
+              <a class="menu-button btn btn-primary" href="category2.html">CSS</a>
+              <a class="menu-button btn btn-primary" href="category3.html">Frameworks</a>
+          </div>
+          </div>
         </div>
       </div>
 
-      <!-- Second category -->
-      <div class="category card shadow p-3 mb-5 bg-white rounded">
-        <h2 class="category-title">CSS</h2>
-        <!-- First post -->
-        <div class="post well">
-          <h3 class="post-title">What is CSS<h3>
-          <p class="post-paragraph d-none d-sm-block">
+      <div class="jumbotron">
+        <div class="title-page">Welcome</div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row no-gutters">
+        <!-- post -->
+        <div class="post col">
+          <h3 class="post-title">What is HTML ?</h3>
+          <div class="post-metadata">
+              <button type="button" class="post-metadata-button btn btn-dark" disabled>HTML</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>Manon P.</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>09/14/2018</button>
+          </div>
+          <p class="post-paragraph">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -74,12 +47,16 @@
             occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum.
           </p>
-          <p class="post-author-date d-none d-sm-block">Written by Manon P., <span class="post-date">09/14/2018</span></p>
         </div>
-        <!-- Second post -->
-        <div class="post well">
-          <h3 class="post-title">Selectors<h3>
-          <p class="post-paragraph d-none d-sm-block">
+        <!-- post -->
+        <div class="post col">
+          <h3 class="post-title">What is CSS ?</h3>
+          <div class="post-metadata">
+              <button type="button" class="post-metadata-button btn btn-dark" disabled>CSS</button>
+              <button type="button" class="post-metadata-button btn btn-secondary disabled">Manon P.</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>09/14/2018</button>
+          </div>
+          <p class="post-paragraph">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -88,12 +65,16 @@
             occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum.
           </p>
-          <p class="post-author-date d-none d-sm-block">Written by Manon P., <span class="post-date">09/14/2018</span></p>
         </div>
-        <!-- Third post -->
-        <div class="post well">
-          <h3 class="post-title">Stylesheets<h3>
-          <p class="post-paragraph d-none d-sm-block">
+        <!-- post -->
+        <div class="post col">
+          <h3 class="post-title">Markups</h3>
+          <div class="post-metadata">
+              <button type="button" class="post-metadata-button btn btn-dark" disabled>HTML</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>Manon P.</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>09/14/2018</button>
+          </div>
+          <p class="post-paragraph">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -102,17 +83,18 @@
             occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum.
           </p>
-          <p class="post-author-date d-none d-sm-block">Written by Manon P., <span class="post-date">09/14/2018</span></p>
         </div>
       </div>
-
-      <!-- Third category -->
-      <div class="category card shadow p-3 mb-5 bg-white rounded">
-        <h2 class="category-title">Frameworks</h2>
-        <!-- First post -->
-        <div class="post well">
-          <h3 class="post-title">Angular<h3>
-          <p class="post-paragraph d-none d-sm-block">
+      <div class="row no-gutters">
+        <!-- post -->
+        <div class="post col">
+          <h3 class="post-title">Angular</h3>
+          <div class="post-metadata">
+              <button type="button" class="post-metadata-button btn btn-dark" disabled>Frameworks</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>Manon P.</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>09/14/2018</button>
+          </div>
+          <p class="post-paragraph">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -121,12 +103,16 @@
             occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum.
           </p>
-          <p class="post-author-date d-none d-sm-block">Written by Manon P., <span class="post-date">09/14/2018</span></p>
         </div>
-        <!-- Second post -->
-        <div class="post well">
-          <h3 class="post-title">Vue<h3>
-          <p class="post-paragraph d-none d-sm-block">
+        <!-- post -->
+        <div class="post col">
+          <h3 class="post-title">Selectors</h3>
+          <div class="post-metadata">
+              <button type="button" class="post-metadata-button btn btn-dark" disabled>CSS</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>Manon P.</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>09/14/2018</button>
+          </div>
+          <p class="post-paragraph">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -135,12 +121,16 @@
             occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum.
           </p>
-          <p class="post-author-date d-none d-sm-block">Written by Manon P., <span class="post-date">09/14/2018</span></p>
         </div>
-        <!-- Third post -->
-        <div class="post well">
-          <h3 class="post-title">React<h3>
-          <p class="post-paragraph d-none d-sm-block">
+        <!-- post -->
+        <div class="post col">
+          <h3 class="post-title">Vue</h3>
+          <div class="post-metadata">
+              <button type="button" class="post-metadata-button btn btn-dark" disabled>Frameworks</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>Manon P.</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>09/14/2018</button>
+          </div>
+          <p class="post-paragraph">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -149,10 +139,66 @@
             occaecat cupidatat non proident, sunt in culpa qui officia deserunt
             mollit anim id est laborum.
           </p>
-          <p class="post-author-date d-none d-sm-block">Written by Manon P., <span class="post-date">09/14/2018</span></p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <!-- post -->
+        <div class="post col">
+          <h3 class="post-title">Stylesheets</h3>
+          <div class="post-metadata">
+              <button type="button" class="post-metadata-button btn btn-dark" disabled>CSS</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>Manon P.</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>09/14/2018</button>
+          </div>
+          <p class="post-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <!-- post -->
+        <div class="post col">
+          <h3 class="post-title">DOM</h3>
+          <div class="post-metadata">
+              <button type="button" class="post-metadata-button btn btn-dark" disabled>HTML</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>Manon P.</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>09/14/2018</button>
+          </div>
+          <p class="post-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <!-- post -->
+        <div class="post col">
+          <h3 class="post-title">React</h3>
+          <div class="post-metadata">
+              <button type="button" class="post-metadata-button btn btn-dark" disabled>Frameworks</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>Manon P.</button>
+              <button type="button" class="post-metadata-button btn btn-secondary" disabled>09/14/2018</button>
+          </div>
+          <p class="post-paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
         </div>
       </div>
     </div>
+
   </body>
 
 </html>
