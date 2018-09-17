@@ -26,24 +26,6 @@
   text-align: center;
 }
 
-.content {
-  margin: 20px;
-  font-family: "Helvetica", sans-serif;
-}
-
-.category {
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  position: static;
-}
-
-.category-title {
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-}
-
 .post{
   margin: 20px;
 }
