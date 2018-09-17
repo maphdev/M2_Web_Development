@@ -4,7 +4,7 @@ Software Engineering course "Web Development" from the second year of Master's a
 
 ## Course
 
-The objective of this course is to learn how to design and develop a web application using web 2.0 techniques.
+The objective of this course is to learn how to design and develop a web application using web 2.0 technologies.
 
 The course website is [here](http://www.reveillere.fr/M2WEB/).
 
