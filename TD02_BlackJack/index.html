@@ -3,20 +3,59 @@
   <head>
     <title>BlackJack</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
   </head>
-  <body id="mybody">
-    <h1>BlackJack</h1>
-    <p>The bank's money: <span id="bank-money">100</span>.</p>
-    <p>Your money: <span id="user-money">100</span>.</p>
-    <div>
-      <h2>The bank's cards</h2>
-      <p>No cards yet!</p>
-    </div>
-    <div>
-      <h2>Your cards</h2>
-      <p>Your level: <span id="user-level">0</span>.</p>
-      <p><button type="button" id="button-new-card">New card!</button></p>
-      <div id="user-cards">
+  <body>
+
+    <!-- title -->
+    <h1 class="big-title centered">BlackJack</h1>
+
+    <!-- content -->
+    <div class="container">
+      <!-- Money money money -->
+      <div class="bloc row centered">
+        <div class="col">
+          <p>The bank's money:</p>
+          <p id="bank-money">100</p>
+        </div>
+        <div class="col">
+          <p>Your money:</p>
+          <p id="user-money">100</p>
+        </div>
+      </div>
+      <!-- Place your bet -->
+      <div class="bloc border-top">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-4">
+            <img src="img/token.png" alt="token" width="50%">
+          </div>
+          <input id="amountBet" type="number" class="col-md-2 form-control" placeholder="Enter bet">
+          <button id="button-play" type="button" class="btn btn-secondary align-items-center col-md-2" style="margin-left: 6px;">Play</button>
+        </div>
+      </div>
+      <!-- Cards -->
+      <div id="game" class="bloc border-top" hidden>
+        <div class="row centered">
+          <!-- Bank's cards -->
+          <div class="col">
+            <h2>The bank's cards</h2>
+            <p>Bank's level: <span id="bank-level">0</span>.</p>
+            <p class="no-cards">No cards yet!</p>
+            <div id="bank-cards">
+            </div>
+          </div>
+          <!-- User's cards -->
+          <div class="col">
+            <h2>Your cards</h2>
+            <p>Your level: <span id="user-level">0</span>.</p>
+            <p class="no-cards">No cards yet!</p>
+            <div id="user-cards">
+            </div>
+          </div>
+        </div>
+        <p class="centered"><button type="button" id="button-new-card" class="btn btn-secondary" style="margin-top: 20px;">New card!</button></p>
       </div>
     </div>
     <script type="text/javascript" src="game.js"></script>
