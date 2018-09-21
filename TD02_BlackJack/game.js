@@ -55,6 +55,12 @@ let dic =        [{path: "img/cardClubsA.png", value: 1},
                   {path: "img/cardSpadesK.png", value: 10}
                 ];
 
+//  tour
+let nbCardsAfterFirstTour = 48;
+
+// unknown card
+let secretBankCardPath;
+
 // when the user clicks on the Play button
 function startGame() {
   // check value of bet
@@ -91,42 +97,32 @@ const btnPlay = document.querySelector("#button-play");
 btnPlay.addEventListener('click', startGame);
 
 // when the user clicks on the New Card button
-function newCard() {
+function drawCards() {
   console.log("new card");
-  if (cardsInDeck === 52){
-    console.log("première");
-    // update display
-    updateGameSectionDisplay();
-    // display first 2 cards
-    let bankCard1ID = getRandomIdCard();
-    let bankCard2ID = getRandomIdCard();
-    let userCard1ID = getRandomIdCard();
-    let userCard2ID = getRandomIdCard();
-    addCard('bank-cards', dic[bankCard1ID.toString()]["path"]);
-    addCard('bank-cards', dic[bankCard2ID.toString()]["path"]);
-    addCard('user-cards', dic[userCard1ID.toString()]["path"]);
-    addCard('user-cards', dic[userCard2ID.toString()]["path"]);
-    // update level
-    let bankLevel = Number(document.querySelector("#bank-level").textContent) + dic[bankCard1ID.toString()]["value"] + dic[bankCard2ID.toString()]["value"];
-    document.querySelector("#bank-level").textContent = bankLevel;
-    let userLevel = Number(document.querySelector("#user-level").textContent) + dic[userCard1ID.toString()]["value"] + dic[userCard2ID.toString()]["value"];
-    document.querySelector("#user-level").textContent = userLevel;
-    // remove these cards of the deck
-    dic.splice(bankCard1ID.toString(), 1);
-    dic.splice(bankCard2ID.toString(), 1);
-    dic.splice(userCard1ID.toString(), 1);
-    dic.splice(userCard1ID.toString(), 1);
-    cardsInDeck -= 4;
-    // check rules
-    checkRules(bankLevel, userLevel);
-  } else if (cardsInDeck === 51) {
-    console.log("deuxième");
-  } else if (cardsInDeck === 0) {
-    console.log("Mate, the deck is empty now.");
-  } else {
-    console.log("next");
-  }
-  cardsInDeck -= 1;
+  console.log("première");
+  // update display
+  updateGameSectionDisplay();
+  // display first 2 cards
+  let bankCard1ID = getRandomIdCard();
+  let bankCard2ID = getRandomIdCard();
+  let userCard1ID = getRandomIdCard();
+  let userCard2ID = getRandomIdCard();
+  addSimpleCard('bank-cards', dic[bankCard1ID.toString()]["path"]);
+  addSimpleCard('bank-cards', 'img/cardBack.png');
+  secretBankCardPath = dic[bankCard2ID.toString()]["path"];
+  addSimpleCard('user-cards', dic[userCard1ID.toString()]["path"]);
+  addSimpleCard('user-cards', dic[userCard2ID.toString()]["path"]);
+  // update level
+  let bankLevel = Number(document.querySelector("#bank-level").textContent) + dic[bankCard1ID.toString()]["value"] + dic[bankCard2ID.toString()]["value"];
+  document.querySelector("#bank-level").textContent = bankLevel;
+  let userLevel = Number(document.querySelector("#user-level").textContent) + dic[userCard1ID.toString()]["value"] + dic[userCard2ID.toString()]["value"];
+  document.querySelector("#user-level").textContent = userLevel;
+  // remove these cards of the deck
+  dic.splice(bankCard1ID.toString(), 1);
+  dic.splice(bankCard2ID.toString(), 1);
+  dic.splice(userCard1ID.toString(), 1);
+  dic.splice(userCard1ID.toString(), 1);
+  cardsInDeck -= 4;
 }
 
 // update display in game section
@@ -135,10 +131,14 @@ function updateGameSectionDisplay() {
   for (let i = 0; i < noCardsText.length; i++) {
     noCardsText[i].style.display = "none";
   }
+  document.querySelector("#button-draw-cards").hidden = true;
+  document.querySelector("#button-hit").hidden = false;
+  document.querySelector("#button-stand").hidden = false;
+  document.querySelector("#button-double").hidden = false;
 }
 
 // add an image of path cardImagePath within the tag identified by parentId
-function addCard(parentId, cardImagePath) {
+function addSimpleCard(parentId, cardImagePath) {
   let parent = document.getElementById(parentId);
   let card = document.createElement('img');
   card.src = cardImagePath;
@@ -151,11 +151,46 @@ function getRandomIdCard() {
   return Math.floor((Math.random() * cardsInDeck));
 }
 
-// check if there is a winning/losing situation
-function checkRules(bankLevel, userLevel) {
-  console.log(bankLevel);
-  console.log(userLevel);
+const btnDrawCards = document.querySelector("#button-draw-cards");
+btnDrawCards.addEventListener('click', drawCards);
+
+function hit() {
+  console.log("hit");
+  // display a card
+  let userCardID = getRandomIdCard();
+  addSimpleCard('user-cards', dic[userCardID.toString()]["path"]);
+  // update level
+  let userLevel = Number(document.querySelector("#user-level").textContent) + dic[userCardID.toString()]["value"];
+  document.querySelector("#user-level").textContent = userLevel;
+  // remove these cards of the deck
+  dic.splice(userCardID.toString(), 1);
+  cardsInDeck -= 1;
 }
 
-const btnNewCard = document.querySelector("#button-new-card");
-btnNewCard.addEventListener('click', newCard);
+const btnHit = document.querySelector("#button-hit");
+btnHit.addEventListener('click', hit);
+
+function stand() {
+  console.log("stand");
+  playBank()
+}
+
+const btnStand = document.querySelector("#button-stand");
+btnStand.addEventListener('click', stand);
+
+function double() {
+  console.log("double");
+  // we hit then increase the value of the bet
+  hit();
+  let input = document.querySelector("#amountBet");
+  let currentBet = Number(input.value);
+  let newBet = currentBet * 2;
+  input.value = String(newBet);
+}
+
+const btnDouble = document.querySelector("#button-double");
+btnDouble.addEventListener('click', double);
+
+function playBank() {
+  console.log("The bank will play now.");
+}

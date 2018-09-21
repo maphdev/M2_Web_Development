@@ -15,7 +15,7 @@
     <!-- content -->
     <div class="container">
       <!-- Money money money -->
-      <div class="bloc row centered">
+      <div class="jumbotron bloc row centered">
         <div class="col">
           <p>The bank's money:</p>
           <p id="bank-money">100</p>
@@ -55,7 +55,13 @@
             </div>
           </div>
         </div>
-        <p class="centered"><button type="button" id="button-new-card" class="btn btn-secondary" style="margin-top: 20px;">New card!</button></p>
+        <p class="centered"><button type="button" id="button-draw-cards" class="btn btn-secondary" style="margin-top: 20px;">Draw cards!</button></p>
+        <div class="centered">
+          <button type="button" id="button-hit" class="btn btn-secondary" style="margin-top: 20px;" hidden>Hit</button>
+          <button type="button" id="button-stand" class="btn btn-secondary" style="margin-top: 20px;" hidden>Stand</button>
+          <button type="button" id="button-double" class="btn btn-secondary" style="margin-top: 20px;" hidden>Double</button>
+        </div>
+
       </div>
     </div>
     <script type="text/javascript" src="game.js"></script>
