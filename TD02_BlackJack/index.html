@@ -15,18 +15,18 @@
     <!-- content -->
     <div class="container">
       <!-- Money money money -->
-      <div class="jumbotron bloc row centered">
+      <div class="jumbotron row centered shadow rounded">
         <div class="col">
           <p>The bank's money:</p>
-          <p id="bank-money">100</p>
+          <p id="bank-money">1000</p>
         </div>
         <div class="col">
           <p>Your money:</p>
-          <p id="user-money">100</p>
+          <p id="user-money">1000</p>
         </div>
       </div>
       <!-- Place your bet -->
-      <div class="bloc border-top">
+      <div class="bloc">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-4">
             <img src="img/token.png" alt="token" width="50%">
@@ -41,7 +41,7 @@
           <!-- Bank's cards -->
           <div class="col">
             <h2>The bank's cards</h2>
-            <p>Bank's level: <span id="bank-level">0</span>.</p>
+            <p class="vertical-margin">Bank's level: <span id="bank-level">0</span>.</p>
             <p class="no-cards">No cards yet!</p>
             <div id="bank-cards">
             </div>
@@ -49,19 +49,24 @@
           <!-- User's cards -->
           <div class="col">
             <h2>Your cards</h2>
-            <p>Your level: <span id="user-level">0</span>.</p>
+            <p class="vertical-margin">Your level: <span id="user-level">0</span>.</p>
             <p class="no-cards">No cards yet!</p>
             <div id="user-cards">
             </div>
           </div>
         </div>
-        <p class="centered"><button type="button" id="button-draw-cards" class="btn btn-secondary" style="margin-top: 20px;">Draw cards!</button></p>
-        <div class="centered">
-          <button type="button" id="button-hit" class="btn btn-secondary" style="margin-top: 20px;" hidden>Hit</button>
-          <button type="button" id="button-stand" class="btn btn-secondary" style="margin-top: 20px;" hidden>Stand</button>
-          <button type="button" id="button-double" class="btn btn-secondary" style="margin-top: 20px;" hidden>Double</button>
+        <div class="centered vertical-margin">
+          <p class="centered"><button type="button" id="button-draw-cards" class="btn btn-secondary">Draw cards!</button></p>
+          <div>
+            <button type="button" id="button-hit" class="btn btn-secondary col-md-2" hidden>Hit</button>
+            <button type="button" id="button-stand" class="btn btn-secondary col-md-2" hidden>Stand</button>
+            <button type="button" id="button-double" class="btn btn-secondary col-md-2" hidden>Double</button>
+          </div>
+          <div id="result" class="card" hidden style="margin-bottom: 30px;">
+            <p></p>
+          </div>
+          <button type="button" id="button-start-new-game" class="btn btn-secondary" hidden>Start a new game</button>
         </div>
-
       </div>
     </div>
     <script type="text/javascript" src="game.js"></script>

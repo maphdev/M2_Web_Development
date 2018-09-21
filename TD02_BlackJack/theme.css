@@ -19,3 +19,16 @@
 #bank-money, #user-money {
   font-weight: bold;
 }
+
+.jumbotron {
+  margin-bottom: -5px !important;
+}
+
+.vertical-margin {
+  margin: 30px 0px 30px 0px;
+}
+
+#result {
+  padding: 20px;
+  font-weight: bold;
+}
