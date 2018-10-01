@@ -1,0 +1,48 @@
+.mybody {
+  margin: 50px;
+  min-width: 320px;
+}
+
+.header {
+  font-size: 30px;
+  padding: 0px 0px 10px 0px;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #999;
+}
+
+#title-blog {
+  font-style: italic;
+  color: #555;
+  margin-left: 0px;
+}
+
+.menu-button {
+  color: #FFF !important;
+}
+
+#title-page {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.post{
+  margin: 20px;
+}
+
+.post-title {
+  font-size: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #EEE;
+}
+
+.post-metadata-button {
+  font-size: 5px;
+  margin: 2px 0px 2px 0px;
+}
+
+.post-paragraph {
+  font-size: 20px;
+  margin: 10px 0px 10px 0px;
+}
