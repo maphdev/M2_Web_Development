@@ -1,6 +1,8 @@
 $(document).ready(function () {
   const toiletsURL = 'http://odata.bordeaux.fr/v1/databordeaux/sigsanitaire/?format=json&callback=?';
   const kidareasURL = 'http://odata.bordeaux.fr/v1/databordeaux/airejeux/?format=json&callback=?';
+  const parkingsURL = 'http://odata.bordeaux.fr/v1/databordeaux/sigparkpub/?format=json&callback=?';
+  const neighborhoodsURL = 'http://odata.bordeaux.fr/v1/databordeaux/sigquartiers/?format=json&callback=?';
 
   function getData(URL){
     deleteAllInnerElements('data-list');
@@ -10,7 +12,6 @@ $(document).ready(function () {
        let nbElements = result['d'].length;
 
        for (i = 0; i < nbElements; i++) {
-         console.log(result['d'][i].nom);
          addListElement('data-list', result['d'][i].nom);
        }
     });
@@ -36,6 +37,14 @@ $(document).ready(function () {
 
   $('#btn-kidareas').click(function () {
     getData(kidareasURL);
+  });
+
+  $('#btn-parkings').click(function () {
+    getData(parkingsURL);
+  });
+
+  $('#btn-neighborhoods').click(function () {
+    getData(neighborhoodsURL);
   });
 });
 
