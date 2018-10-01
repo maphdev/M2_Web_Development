@@ -16,10 +16,15 @@ const neighborhoods = {
   8: "Caudéran"
 };
 
+var mymap;
+var marker;
+
 initialize();
 
 function initialize() {
   initializeCategories();
+
+  intializeMap();
 
   fetchAndDisplayData();
 }
@@ -37,7 +42,7 @@ function addCategory(parentId, neighborhoodsId){
   let parent = document.getElementById(parentId);
   // post
   let div = document.createElement("div");
-  div.classList.add("post", "col");
+  div.classList.add("post", "col", neighborhoodsId.toString());
   parent.appendChild(div);
   // title in post
   let title = document.createElement("h3");
@@ -49,6 +54,16 @@ function addCategory(parentId, neighborhoodsId){
   p.classList.add("post-paragraph");
   p.textContent = "no text content yet";
   div.appendChild(p);
+}
+
+// initialize the map
+function intializeMap() {
+  mymap = L.map('mapid').setView([44.84, -0.5789], 13);
+  marker = L.marker([44.84, -0.5789]).addTo(mymap);
+  L.tileLayer('https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
+  	maxZoom: 20,
+  	attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(mymap);
 }
 
 // fetch data and display it in categories
