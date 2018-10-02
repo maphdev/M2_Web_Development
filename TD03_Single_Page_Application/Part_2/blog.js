@@ -1,5 +1,4 @@
 const requestsURL = {
-  "Quartiers": "http://odata.bordeaux.fr/v1/databordeaux/sigquartiers/?format=json&callback=?",
   "Aires de jeux pour enfants": "http://odata.bordeaux.fr/v1/databordeaux/airejeux/?format=json&callback=?",
   "Toilettes publiques": "http://odata.bordeaux.fr/v1/databordeaux/sigsanitaire/?format=json&callback=?",
   "Parkings publics": "http://odata.bordeaux.fr/v1/databordeaux/sigparkpub/?format=json&callback=?"
