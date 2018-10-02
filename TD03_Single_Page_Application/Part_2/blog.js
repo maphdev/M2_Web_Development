@@ -19,7 +19,16 @@ const neighborhoods = {
 // map
 var mymap;
 var marker;
+var greenIcon = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
+// entry point
 initialize();
 
 function initialize() {
@@ -66,12 +75,10 @@ function addCategory(parentId, neighborhoodsId){
 // initialize the map
 function intializeMap() {
   mymap = L.map('mapid').setView([44.84, -0.5789], 13);
-  marker = L.marker([44.84, -0.5789]).addTo(mymap);
   L.tileLayer('https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
   	maxZoom: 20,
   	attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(mymap);
-
 }
 
 // fetch data and display it in categories
@@ -80,7 +87,6 @@ function fetchAndDisplayData() {
   const URL = requestsURL[document.querySelector("#title-page").textContent];
   // request data from opendata
   $.getJSON(URL, function(result) {
-    console.log(result);
     let nbElements = result['d'].length;
     for (i = 0; i < nbElements; i++) {
       addElement(result['d'][i]);
@@ -102,15 +108,30 @@ function addElement(element) {
   p.setAttribute("x_long", element.x_long);
   p.setAttribute("y_lat", element.y_lat);
   parent.appendChild(p);
-  // set EventListener
+  // set EventListener for when we click on a location
   p.addEventListener('click', changeLocationAndMarker);
+  // Add the corresponding marker on the map
+  L.marker([element.y_lat, element.x_long], {"nom": element.nom, "x_long": element.x_long, "y_lat": element.y_lat}).addTo(mymap).on('click', onClickMarker);
+}
+
+function onClickMarker(e) {
+  if (marker === undefined) {
+    marker = L.marker([this.options.y_lat, this.options.x_long], {icon: greenIcon}).addTo(mymap);
+  }
+  marker.setLatLng([this.options.y_lat, this.options.x_long]);
+  this.bindPopup(this.options.nom).openPopup();
 }
 
 function changeLocationAndMarker(event){
   let element = event.target;
-  console.log(element.getAttribute("y_lat"));
+  // change the location
   mymap.setView([element.getAttribute("y_lat"), element.getAttribute("x_long")], 15);
+  // display a special green marker
+  if (marker === undefined) {
+    marker = L.marker([element.getAttribute("y_lat"), element.getAttribute("x_long")], {icon: greenIcon}).addTo(mymap);
+  }
   marker.setLatLng([element.getAttribute("y_lat"), element.getAttribute("x_long")]);
   marker.bindPopup(element.textContent).openPopup();
+  // so the user can see the map immediatly after clicking a location
   window.location.hash = 'title-page';
 }
