@@ -115,6 +115,7 @@ function addElement(element) {
 }
 
 function onClickMarker(e) {
+  mymap.setView([this.options.y_lat, this.options.x_long], 15);
   if (marker === undefined) {
     marker = L.marker([this.options.y_lat, this.options.x_long], {icon: greenIcon}).addTo(mymap);
   }
