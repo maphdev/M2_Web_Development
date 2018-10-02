@@ -1,0 +1,23 @@
+h1 {
+  font-family: 'Codystar', cursive;
+  font-size: 100px;
+}
+#data {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.card {
+  margin: 10px !important;
+  padding: 10px;
+  min-width: 300px;
+  text-align: center;
+}
+img {
+  max-width: 300px;
+  max-height: 300px;
+}
+.center-block {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+}

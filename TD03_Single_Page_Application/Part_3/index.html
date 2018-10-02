@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Albums</title>
+		<link rel="stylesheet" type="text/css" href="theme.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Codystar" rel="stylesheet">
+		<!--
+		<style>
+			h1 {
+				font-family: 'Codystar', cursive;
+				font-size: 100px;
+			}
+      #data {
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+      .card {
+        margin: 10px !important;
+        padding: 10px;
+        min-width: 300px;
+				text-align: center;
+      }
+      img {
+        max-width: 300px;
+        max-height: 300px;
+      }
+      .center-block {
+         margin-left:auto;
+         margin-right:auto;
+         display:block;
+      }
+
+    </style>		-->
+	</head>
+	<body>
+    <div class="container-fluid">
+      <div class="jumbotron row justify-content-md-center">
+        <h1 class="centered">Mariah Carey</h1>
+      </div>
+    </div>
+		<div id="menu" class="text-center">
+			<button type="button" id="btn" class="btn  btn-primary">Load Albums</button>
+		</div>
+		<div id="data" class="container">
+			<div id="data-list" class="row">
+			</div>
+		</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="request.js"></script>
+	</body>
+</html>
