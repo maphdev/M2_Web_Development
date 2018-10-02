@@ -1,4 +1,4 @@
-# Static Website
+# BlackJack
 
 This project consists in creating a BlackJack game with HTML, CSS and JavaScript.
 
