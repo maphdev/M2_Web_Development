@@ -16,6 +16,7 @@ const neighborhoods = {
   8: "Caudéran"
 };
 
+// map
 var mymap;
 var marker;
 
@@ -32,8 +33,14 @@ function initialize() {
 // intialize category sections
 function initializeCategories() {
   const nbNeighborhoods = Object.keys(neighborhoods).length;
-  for (let i = 1; i < nbNeighborhoods+1; i++) {
-    addCategory("content-categories", i);
+  for (let i = 1; i < 4; i++) {
+    addCategory("content-categories-r1", i);
+  }
+  for (let i = 4; i < 7; i++) {
+    addCategory("content-categories-r2", i);
+  }
+  for (let i = 7; i < nbNeighborhoods+1; i++) {
+    addCategory("content-categories-r3", i);
   }
 }
 
@@ -42,7 +49,8 @@ function addCategory(parentId, neighborhoodsId){
   let parent = document.getElementById(parentId);
   // post
   let div = document.createElement("div");
-  div.classList.add("post", "col", neighborhoodsId.toString());
+  div.classList.add("post", "col", "card");
+  div.id = neighborhoodsId;
   parent.appendChild(div);
   // title in post
   let title = document.createElement("h3");
@@ -52,7 +60,6 @@ function addCategory(parentId, neighborhoodsId){
   // content in post
   let p = document.createElement("p");
   p.classList.add("post-paragraph");
-  p.textContent = "no text content yet";
   div.appendChild(p);
 }
 
@@ -64,6 +71,7 @@ function intializeMap() {
   	maxZoom: 20,
   	attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(mymap);
+
 }
 
 // fetch data and display it in categories
@@ -73,10 +81,36 @@ function fetchAndDisplayData() {
   // request data from opendata
   $.getJSON(URL, function(result) {
     console.log(result);
-     /*let nbElements = result['d'].length;
-
-     for (i = 0; i < nbElements; i++) {
-       addListElement('data-list', result['d'][i].nom);
-     }*/
+    let nbElements = result['d'].length;
+    for (i = 0; i < nbElements; i++) {
+      addElement(result['d'][i]);
+    }
   });
+}
+
+function addElement(element) {
+  // get the neighborhood where to display the element
+  let neighborhoodId = element.num_quartier;
+  if (neighborhoodId === undefined) {
+    return;
+  }
+  // get the correct div
+  let parent = document.getElementById(neighborhoodId);
+  // create and add the element
+  let p = document.createElement("p");
+  p.textContent = element.nom;
+  p.setAttribute("x_long", element.x_long);
+  p.setAttribute("y_lat", element.y_lat);
+  parent.appendChild(p);
+  // set EventListener
+  p.addEventListener('click', changeLocationAndMarker);
+}
+
+function changeLocationAndMarker(event){
+  let element = event.target;
+  console.log(element.getAttribute("y_lat"));
+  mymap.setView([element.getAttribute("y_lat"), element.getAttribute("x_long")], 15);
+  marker.setLatLng([element.getAttribute("y_lat"), element.getAttribute("x_long")]);
+  marker.bindPopup(element.textContent).openPopup();
+  window.location.hash = 'title-page';
 }
