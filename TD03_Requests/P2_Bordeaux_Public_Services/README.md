@@ -1,4 +1,4 @@
-# Part 2 : Bordeaux Public Services
+# Bordeaux Public Services
 
 Website collecting data from OpenData Bordeaux with JSONP cross-domain requests and showing different public services (toilets, car parks, playgrounds) grouped by Bordeaux districts. An interactive map is also available in order to facilitate the use of the website.
 

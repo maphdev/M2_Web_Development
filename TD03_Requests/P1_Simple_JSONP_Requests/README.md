@@ -1,4 +1,4 @@
-# Part 1 : Simple JSONP requests
+# Simple JSONP Requests
 
 Simple JSONP cross-domain requests on OpenData Bordeaux with no data treatment.
 

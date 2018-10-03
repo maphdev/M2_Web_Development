@@ -1,4 +1,4 @@
-# Part 3 : Album list
+# Album List
 
 Page collecting a list of Albums with CORS cross-domain requests and displaying them with some informations.
 
