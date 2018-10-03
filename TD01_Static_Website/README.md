@@ -8,6 +8,5 @@ This project consists in creating a blog-type static website with HTML, CSS and 
 
 ## Concepts
 
-- HTML
-- CSS
+- HTML, CSS
 - Bootstrap

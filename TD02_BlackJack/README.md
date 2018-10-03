@@ -10,7 +10,5 @@ The user can bet money, and play a traditional game of Blackjack in order to def
 
 ## Concepts
 
-- HTML
-- CSS
-- JavaScript
+- HTML, CSS, JavaScript
 - Bootstrap
