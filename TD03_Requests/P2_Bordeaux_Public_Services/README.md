@@ -4,7 +4,7 @@ Website collecting data from OpenData Bordeaux with JSONP cross-domain requests 
 
 ## Preview
 
-![preview](https://github.com/maphdev/M2_Web_Development/blob/master/TD03_Requests/Part_2/preview.png)
+![preview](https://github.com/maphdev/M2_Web_Development/blob/master/TD03_Requests/P2_Bordeaux_Public_Services/preview.png)
 
 ## Concepts
 
