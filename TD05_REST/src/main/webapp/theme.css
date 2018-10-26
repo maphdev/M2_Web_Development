@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+.title-page {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.centered-element {
+	  text-align: center;
+}
+
+.notice {
+	font-style: italic;
+	font-size: 20px;
+}
+
+.big-margin {
+	margin: 30px 0px 30px 0px;
+}
+
+.small-margin {
+	margin: 5px 0px 5px 0px;
+}
+
